@@ -31,18 +31,22 @@ function copydata(){
 function hob(){
    
 }
+var authtoken;
+async function initiate(){
 
-var req = await fetch("https://www.universal-tutorial.com/api/getaccesstoken",{
+    var req = await fetch("https://www.universal-tutorial.com/api/getaccesstoken",{
+    
+    headers:{
+        "Accept": "application/json",
+        "api-token": "QXbOD1ZwyZV2sxx8mcbeKOhKAe5ve9m1I8mJIoJ1O4UCHSNHWamKU2QjZNT0mFpt5bQ",
+        "user-email": "sujeetrath48@gmail.com"
+    }});
+    
+    
+    authtoken = await req.json();
+}
 
-headers:{
-    "Accept": "application/json",
-    "api-token": "QXbOD1ZwyZV2sxx8mcbeKOhKAe5ve9m1I8mJIoJ1O4UCHSNHWamKU2QjZNT0mFpt5bQ",
-    "user-email": "sujeetrath48@gmail.com"
-}});
-
-
-const authtoken = await req.json();
-
+initiate();
 
 async function fetchcountry(){
 
@@ -87,6 +91,8 @@ async function pfetchcountry(){
 
 async function fetchstate(){
 
+    state.innerHTML = ""
+
     let country = document.getElementById("country").value
 
     const responce = await fetch(`https://www.universal-tutorial.com/api/states/${country}`,{
@@ -100,19 +106,14 @@ async function fetchstate(){
 
     console.log(datalist)
 
+    if(datalist.length==0){
 
-    var opt2 = document.createElement("option")
+        var opt2 = document.createElement("option")
+        opt2.value = country
+        opt2.text = country
+        state.add(opt2)       
+    }
     
-    opt1.value = country
-    opt2.value = country
-
-    opt1.text = country
-    opt2.text = country
-
-    state.add(opt1)
-    pstate.add(opt2)
-    
-    state.innerHTML = ""
     for(let i=0;i<datalist.length;i++){
         var opt1 = document.createElement("option")
         
