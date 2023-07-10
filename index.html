@@ -6,177 +6,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-
-    
 </head>
 <body>
-    <div class="container"><br>
-        <div class="heading">
-            <h1 style="color: #ff0097;position: absolute;margin: auto;">REGISTRATION FORM</h1>
-            <div class="logo">
-                <img src="/demo.jpg" id="photo" alt="">
+    <form >
+        <div class="container"><br>
+            <div class="heading">
+                <h1 style="color: #ff0097;position: absolute;margin: auto;">REGISTRATION FORM</h1>
+                <div class="logo">
+                    <img src="/demo.jpg" id="photo" alt="">
+                </div>
             </div>
-        </div>
-        <div ><br>
-            <div class="box">       
-                
-                    <h3 style="color: #001dff;text-align: center;">personal Details</h3><br>
-                    <div class="p-details">
-                        
-                        <div class="col1">
-
-                            <label for="">First Name:</label>
-                            <input type="text" placeholder="Enter First Name"><br><br>
-        
-                            <label for="">Last Name:</label>
-                            <input type="text" placeholder="Enter Last Name"><br><br>
-
-                            <label for="">Email:</label>
+            <div>
+                <div class="box">       
+                    
+                        <h3 style="color: #001dff;text-align: center;">Personal Details</h3><br>
+                        <div class="p-details">
                             
-                            <input type="email" placeholder="Enter Email"><br><br>
+                            <div class="col1">
+    
+                                <label for="">First Name:
+                                    <br><span id="spanFirstName">*First name requried </span>
+                                </label>
+                                <input  id="firstnameinp" type="text" placeholder="Enter First Name"><br><br>
+            
+                                <label for="">Last Name:
+                                    <br><span id="spanLastName" >*Last name requried </span>
+                                </label>
+                                <input id="lastnameinp" type="text" placeholder="Enter Last Name"><br><br>
+    
+                                <label for="">Email:
+                                    <br><span id="spanEmail">*Email requried</span>
+                                </label>
+                                <input id="emailinp" type="email" placeholder="Enter Email"><br><br>
+                            </div>
+                      
+                            <div class="col1">               
+                           
+                                <label for="">Dob:
+                                    <br><span id="spanDob">*Dob requried </span>
+                                </label>
+                                <input type="date" name="" id="dobinp" style="width: 35%;" ><br><br>
+    
+                                <label for="">Gender:
+                                    <br><span id="spanGender">*Gender requried </span>
+                                </label>
+                                <select name="" id="genderinp" style="float: left; width: 35%;">
+                                    <option selected disabled hidden>Tap To Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Rather not say">Rather not say</option>
+                                </select>
+                                <br><br>
+                        
+                                <label for="profilepic">Profile photo:</label>
+                                <input id="profileimg" type="file" accept="image/png, image/gif, image/jpeg" name=""  ><br><br>
+                            </div>
                         </div>
-                  
-                        <div class="col1">               
-                       
-                            <label for="">Dob:</label>
-                            <input type="date" name="" id="" style="width: 35%;" ><br><br>
-
-                            <label for="">Gender:</label>
-                            <select name="" id="" style="float: left; width: 35%;">
-                                <option value="">Male</option>
-                                <option value="">Female</option>
+                </div>
+            </div><br>
+            <div>
+                <div class="box">
+                    <h3 style="color: #001dff; text-align: center;">Permanent Address</h3><br>
+                    <div class="p-details">
+    
+                        <div class="col1">
+    
+                            <label for="">Address Line1:
+                                <br><span id="spanAddress">*Address requried </span>
+                            </label>
+                            <input type="text" id="adl1" placeholder="Address" ><br><br>
+                        
+                            
+                            <label for="">Address Line2:</label>
+                            <input type="text" id="adl2" placeholder="Address" ><br><br>
+                            <label for="">Postal Code:
+                                <br><span id="spanpostal">*postal-code requried </span>
+                            </label>
+                            <input type="number" name="" id="postal" placeholder="postal code"><br><br>
+    
+                        </div>
+    
+                        <div class="col1">
+    
+                            <label for="">country:
+                                <br><span id="spancountry">*Country requried </span>
+                            </label> 
+                            <select name="" id="country" style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select Country</option>
                             </select>
                             <br><br>
                     
-                            <label for="profilepic">Profile photo:</label>
-                            <input id="profileimg" type="file" accept="image/png, image/gif, image/jpeg" name=""  ><br><br>
+                            <label for="">State:
+                                <br><span id="spanstate">*State requried </span>
+                            </label> 
+                            <select name="" id="state"  style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select State</option>
+                               
+                            </select>
+                            <br><br>
+            
+                            <label for="">City:
+                                <br><span id="spancity">*City requried </span>
+                            </label>
+                            <select name="" id="city" style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select City</option>
+                            </select>
+                            <br><br>
                         </div>
+                        
                     </div>
+    
+                </div><br>
             </div>
-        </div><br>
-        <div>
-            <div class="box">
-                <h3 style="color: #001dff; text-align: center;">Permanent Address</h3><br>
-                <div class="p-details">
-
-                    <div class="col1">
-
-                        <label for="">Address Line1:</label>
-                        <input type="text" id="adl1" placeholder="Address" ><br><br>
+    
+            <div>
+    
+                <div class="box">
+                    <h3 style="color: #001dff; text-align: center;">Present Address</h3>
+                     
+                    <div  style="display: flex; align-items: center;">
+                        <label class="lableCheckbox" for="">If Same As Permanent Address</label>
+                        <input type="checkbox" name="" id="copydataCheckbox" onclick=copydata() ><br><br>
+                    </div>
+                    <div class="p-details">
+    
+                        <div class="col1">
+    
+                            <label for="">Address Line1:
+                                <br><span id="spanpadl1">*Address requried </span>
+                            </label>
+                            <input type="text" id="padl1" placeholder="Address"><br><br>
+                        
+                            
+                            <label for="">Address Line2:</label>
+                            <input type="text" id="padl2" placeholder="Address"><br><br>
+    
+                            
+                            <label for="">Postal Code:
+                                <br><span id="spanp-postal">*postal-code requried </span>
+                            </label>
+                            <input type="text" name="" id="p-postal" placeholder="postal code"><br><br>
                     
-                        
-                        <label for="">Address Line2:</label>
-                        <input type="text" id="adl2" placeholder="Address" ><br><br>
-                        <label for="">Postal Code:</label>
-                        <input type="number" name="" id="postal" placeholder="postal code"><br><br>
-
-                    </div>
-
-                    <div class="col1">
-
-                        <label for="">country:</label> 
-                        <select name="" id="country" onclick="fetchcountry()" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select Country</option>
-                        </select>
-                        <br><br>
-                
-                        <label for="">State:</label> 
-                        <select name="" id="state" onclick="fetchstate()" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select State</option>
-                           
-                        </select>
-                        <br><br>
-        
-                        <label for="">City</label>
-                        <select name="" id="city" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select City</option>
-                        </select>
-                        <br><br>
-                    </div>
+                        </div>
+    
+                        <div class="col1">
+    
+                            <label for="">country:
+                                <br><span id="spanp-country">*Country requried </span>
+                            </label> 
+                            <select name="" id="pcountry"  style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select Country </option>        
+                            </select>
+                            <br><br>
                     
-                </div>
-
-            </div><br>
-        </div>
-
-        <div>
-
-            <div class="box">
-                <h3 style="color: #001dff; text-align: center;">Present Address</h3>
-                 
-                <div >
-                    <label for="" style="color: gray; margin-left: 10px; margin-right: 10px;">If Same As Permanent Address</label>
-                        
-                    <input type="checkbox" name="" id="cp" onclick=copydata()><br><br>
-                </div>
-                <div class="p-details">
-
-                    <div class="col1">
-
-                        <label for="">Address Line1:</label>
-                        <input type="text" id="padl1" placeholder="Address"><br><br>
-                    
-                        
-                        <label for="">Address Line2:</label>
-                        <input type="text" id="padl2" placeholder="Address"><br><br>
-
-                        
-                        <label for="">Postal Code:</label>
-                        <input type="text" name="" id="p-postal" placeholder="postal code"><br><br>
-                
-                    </div>
-
-                    <div class="col1">
-
-                        <label for="">country:</label> 
-                        <select name="" id="pcountry" onclick="pfetchcountry()" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select Country </option>        
-                        </select>
-                        <br><br>
-                
-                        <label for="">State:</label> 
-                        <select name="" id="pstate" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select State</option>
-                        </select>
-                        <br><br>
-        
-                        <label for="">City</label>
-                        <select name="" id="pcity" style="float: left; width: 50%;">
-                            <option selected disabled hidden>Tap To Select City</option>
-                        </select>
-                        <br><br>
-                    </div>
-                
-                </div>
-                
-            </div><br>
+                            <label for="">State:
+                                <br><span id="spanp-state">*State requried </span>
+                            </label> 
+                            <select name="" id="pstate" style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select State</option>
+                            </select>
+                            <br><br>
             
-        </div>
-
-        <div class="box" style="border:none !important;">
-            <br>
-                    <label for="" style="float: left;margin-right: 10px;">Hobbies</label>
-
-                    <!-- <input  type="text" style="width: 55%;" id="inp" list="hb" multiple onclick="hob()" placeholder="Enter your hobbies with coma separated "/> -->
-                    <select name="" id="hb"  style="float: left;">
-                        <option value="Movies">Movies</option>
-                        <option value="sports" >sports</option>
-                        <option value="Reading Books">Reading Books</option>
-                        <option value="Video Games">Video Games</option>
-                        <option value="Travelling">Travelling</option>
-                    </select>
-                    <br><br>
-            
-                    <label for="" style="float: left;margin-right: 10px;" >Subcribe To News Letter</label>
+                            <label for="">City:
+                                <br><span id="spanp-city">*City requried </span>
+                            </label>
+                            <select name="" id="pcity" style="float: left; width: 55%;">
+                                <option selected disabled hidden>Tap To Select City</option>
+                            </select>
+                            <br><br>
+                        </div>
                     
-                    <input type="checkbox" name="" id=""><br><br>
-
-                    <button style="border-radius: 8px; font-size: medium; color: white; background-color: #85205e; width: 100px; height: 30px;">Submit</button><br><br>
+                    </div>
+                    
+                </div><br>
+                
+            </div>
+    
+            <div class="box" style="border:none !important;">
+                <br>
+                        <label for="" style="float: left;margin-right: 10px;">Hobbies</label>
+    
+                        <!-- <input  type="text" style="width: 55%;" id="inp" list="hb" multiple onclick="hob()" placeholder="Enter your hobbies with coma separated "/> -->
+                        <select name="" id="hb"  style="float: left;">
+                            <option value="Movies">Movies</option>
+                            <option value="sports" >sports</option>
+                            <option value="Reading Books">Reading Books</option>
+                            <option value="Video Games">Video Games</option>
+                            <option value="Travelling">Travelling</option>
+                        </select>
+                        <br><br>
+                
+                        <label onclick="subcriptionCheckBox()" for="" style="float: left;margin-right: 10px;" >Subcribe To News Letter</label>
+                        
+                        <input type="checkbox" name="" id="subcriptionCheckbox"><br><br>
+    
+                        <button onclick="validate(event)" style="border-radius: 8px; font-size: medium; color: white; background-color: #85205e; width: 100px; height: 30px;">Submit</button><br><br>
+            </div>
+    
         </div>
-
-    </div>
+    </form>
 </body>
 <script src="script.js"></script>
 </html>
