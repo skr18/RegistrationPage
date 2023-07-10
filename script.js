@@ -563,8 +563,8 @@ submitButton.addEventListener('click',(e)=>{
     
     
     if(flag==false){
-
         document.getElementsByClassName("userContainer")[0].style.display="block"
+
         
         var hobbbyvalue=""
     
@@ -596,11 +596,16 @@ submitButton.addEventListener('click',(e)=>{
             }
         }
 
+        if(permanentAddressLine2.value==""){
+            userPresentAddress2.innerHTML = "NA"
+        }else{
+            userPresentAddress2.innerHTML = permanentAddressLine2.value
+        }
 
         if(presentAddressLine2.value==""){
-            userPresentAddress2 = "NA"
+            userPermanentAddress2.innerHTML = "NA"
         }else{
-            userPresentAddress2 = presentAddressLine2.value
+            userPermanentAddress2.innerHTML = presentAddressLine2.value
         }
         userHobbies.innerHTML = hobbbyvalue
         if(checkbox.checked==true){
@@ -611,10 +616,9 @@ submitButton.addEventListener('click',(e)=>{
     }
 })
 
-var checkbox = document.getElementById("subcriptionCheckbox")
+var checkbox = document.getElementById("subcriptionCheckBox")
 
 checkbox.addEventListener("click",()=>{
-
     if(checkbox.checked == true){
         checkbox.checked = false;
     }else{
