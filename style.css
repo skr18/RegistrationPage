@@ -4,7 +4,7 @@
 }
 .container{
     width: 60% ;
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(228 235 234);
     border-radius: 18px;
     margin: auto;
 }
@@ -16,9 +16,18 @@
 }
 .heading h1{
     /* font-size: xx-large; */
+    color: #ff0097;position: absolute;margin: auto;
     font-weight: 900;
 }
-
+.title{
+    color: #001dff;text-align: center;
+}
+#dobinp{
+    width: 35%;
+}
+#genderinp{
+    float: left; width: 35%;
+}
 #photo{
     width: 80px;
 }
@@ -27,11 +36,10 @@
     display: flex;
     flex-direction: row;
 }
-span{
+.container span{
     position: absolute; color: red;font-size: smaller;
     visibility: hidden;
 }
-
 .col1{
     margin-left: 10px;
     width: 50%;
@@ -44,14 +52,32 @@ span{
     float: left;
     width: 47%;
 }
+.col1 select{
+    float: left; width: 55%;
+}
 .box{
     border: 1px solid grey;
     width: 97%;
     margin: auto;
     border-radius: 12px;
 }
+.box label{
+    float: left;margin-right: 10px;
+}
+.box select{
+    float: left;
+}
+.submit{
+    border-radius: 8px; font-size: medium; color: white; background-color: #85205e; width: 100px; height: 30px;
+}
+.noborder{
+    border: none;
+}
 .lableCheckbox{
     color: gray; margin-left: 10px; margin-right: 10px;
+}
+.permanentTitle{
+    display: flex; align-items: center
 }
 
 .logo{
@@ -64,8 +90,38 @@ span{
         -webkit-appearance: none;
         margin: 0;
     }
+    .userContainer{
+        margin-top: 20px !important;
+        background-color:rgb(192 214 219);
+        margin: auto;
+        width: 60%;
+        border-radius: 18px;
+        margin-bottom: 10px;
+        display: none;
+    }
+    .userContainer h2{
+        color: #045643;
+        text-align: center;
+        font-weight: 900;
+    }
+    .userData{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #hobby{
+        text-decoration: none;
+    }
+    .hobbies{
+        display: flex;
+        flex-direction: column;
+        display: none;
+        background-color: #a1b8bd;
+        width: 120px;
+    }
+    
     @media(max-width:868px) {
-        span{
+        .container span{
             font-size:xx-small ;
         }
         .logo{
@@ -86,15 +142,15 @@ span{
         }
         .col1{
             margin-left: 10px;
-            width: 80%;
+            width: 85%;
         }
         .col1 label{
             float: left;
-            width: 36%;
+            width: 35%;
         }
         .col1 input{
             float: left;
-            width: 61% ;
+            width: 60% ;
         }
         .container{
             width: 96% ;
@@ -102,10 +158,19 @@ span{
         .lableCheckbox{
             font-size: small;
         }
+        .userData{
+            flex-direction: column;
+        }
+        .userContainer{
+            width: 80%;
+        }
+        .userData label{
+            width: 45%;
+        }
     }
     
     @media (max-width: 1164px) and (min-width: 869px) {
-        span{
+        .container span{
             font-size:x-small;
         }
         .logo{
@@ -140,3 +205,6 @@ span{
             font-size:medium;
         }
     }
+
+/* User Details */
+

@@ -12,7 +12,10 @@ var presentState = document.getElementById("pstate");
 var presentCity = document.getElementById("pcity");
 var presentPostal = document.getElementById("p-postal");
 
-async function copydata(){
+
+
+var copyCheckbox = document.getElementById("copydataCheckbox");
+copyCheckbox.addEventListener("click",async()=>{
 
     // let checkbox = document.getElementById("copydataCheckbox")
     // if(checkbox.checked == true){
@@ -20,39 +23,34 @@ async function copydata(){
     // }else{
     //     checkbox.checked = true
     // }
-
-    var checked = document.getElementById("copydataCheckbox").checked;
+    
     let flag = 0
     for(let i=5;i<=9;i++){
         if(errormsg[i].status==true){
             flag=1
         }
     }
-    if(checked && flag==1){
+    if(copyCheckbox.checked==true && flag==1){
         document.getElementById("copydataCheckbox").checked=false
         for(let i=5;i<=9;i++){
             if(errormsg[i].status==true){
                 errormsg[i].style.visibility="visible"
             }
-        }
-        
+        } 
+        console.log("heyyy")
     }
-    else if(checked && flag==0){
-        let permanentAddressLine1Value= permanentAddressLine1.value
-        let permanentAddressLine2Value= permanentAddressLine2.value
-        let permanentCountryValue= permanentCountry.value
-        let permanentStateValue= permanentState.value
-        let permanentCityValue= permanentCity.value
-        let permanentPostalValue = permanentPostal.value
+    else if(copyCheckbox.checked==true && flag==0){
           
-        presentAddressLine1.value = permanentAddressLine1Value
-        presentAddressLine2.value = permanentAddressLine2Value
-        presentPostal.value = permanentPostalValue
-        presentCountry.value = permanentCountryValue;
+        presentAddressLine1.value = permanentAddressLine1.value
+        presentAddressLine2.value = permanentAddressLine2.value
+        presentPostal.value = permanentPostal.value
+        presentCountry.value = permanentCountry.value;
+
         await pfetchstate()
-        presentState.value = permanentStateValue;
+        presentState.value = permanentState.value;
+
         await pfetchcity()
-        presentCity.value = permanentCityValue;
+        presentCity.value = permanentCity.value;
 
         for(let i=10;i<=14;i++){
             errormsg[i].style.visibility="hidden"
@@ -60,6 +58,7 @@ async function copydata(){
         }
     }
     else{
+        console.log("elsle")
         presentAddressLine1.value="";
         presentPostal.value=""
 
@@ -88,7 +87,7 @@ async function copydata(){
         presentCity.add(option3)
 
     }
-}
+})
 
 var authtoken;
 var allcountry ,allstate , allcities
@@ -156,10 +155,10 @@ async function pfetchcountry(){
         opt.text = "Tap To Select Country";
         presentCountry.add(opt)
 
-    for(let cities of allcountry){
+    for(let countries of allcountry){
         var opt1 = document.createElement("option")
-        opt1.value = cities.country_name;
-        opt1.text = cities.country_name;
+        opt1.value = countries.country_name;
+        opt1.text = countries.country_name;
         presentCountry.add(opt1)
     }
     let countryselected = document.getElementById("pcountry")
@@ -241,6 +240,7 @@ async function pfetchstate(){
 
     let stateselected = document.getElementById("pstate")
     stateselected.addEventListener("change",()=>{
+        console.log("what")
         pfetchcity()
     })
 }
@@ -328,12 +328,12 @@ cons.addEventListener("change",function (e){
 })
 
 //user info input
-let errormsg = new Array();
-let firstname = document.getElementById("firstnameinp")
-let lastname = document.getElementById("lastnameinp")
-let email = document.getElementById("emailinp")
-let dob = document.getElementById("dobinp")
-let gender = document.getElementById("genderinp")
+var errormsg = new Array();
+var firstname = document.getElementById("firstnameinp")
+var lastname = document.getElementById("lastnameinp")
+var email = document.getElementById("emailinp")
+var dob = document.getElementById("dobinp")
+var gender = document.getElementById("genderinp")
 
 errormsg[0]=document.getElementById("spanFirstName")
 errormsg[0].status=true;
@@ -534,8 +534,10 @@ presentCity.addEventListener('input',(e)=>{
     }
 })
 
+submitButton.addEventListener('click',(e)=>{
 
-function validate(e){
+
+
     e.preventDefault();
 
     var inputEmail =document.getElementById("emailinp").value  
@@ -553,21 +555,84 @@ function validate(e){
             errormsg[i].style.visibility="visible"
             if(flag==false){
                 const element = document.getElementById(errormsg[i].id);
-                console.log(element)
                 element.scrollIntoView(false);
                 flag=true;
             }
         }
     }
-}
-function subcriptionCheckBox(){
-    let checkbox = document.getElementById("subcriptionCheckbox")
+    
+    
+    if(flag==false){
+
+        document.getElementsByClassName("userContainer")[0].style.display="block"
+        
+        var hobbbyvalue=""
+    
+        if(hobby1.checked==true){
+            hobbbyvalue += hobby1.value + ", "
+        }
+        if(hobby2.checked==true){
+            hobbbyvalue += hobby2.value + ", "
+        }
+        if(hobby3.checked==true){
+            hobbbyvalue += hobby3.value + ", "
+        }
+        if(hobby4.checked==true){
+            hobbbyvalue += hobby4.value
+        }
+    
+        var allinputtags = document.getElementById("userProfile").getElementsByTagName("input")
+        for(tags of allinputtags){
+            if(tags.attributes.data_id){
+    
+                document.getElementById(tags.attributes.data_id.value).innerHTML = tags.value
+            }
+        }
+    
+        var allselecttags = document.getElementById("userProfile").getElementsByTagName("select")
+        for(tags of allselecttags){
+            if(tags.attributes.data_id){
+                document.getElementById(tags.attributes.data_id.value).innerHTML = tags.value
+            }
+        }
+
+
+        if(presentAddressLine2.value==""){
+            userPresentAddress2 = "NA"
+        }else{
+            userPresentAddress2 = presentAddressLine2.value
+        }
+        userHobbies.innerHTML = hobbbyvalue
+        if(checkbox.checked==true){
+            userSubcription.innerHTML="Yes"
+        }else{
+            userSubcription.innerHTML="No"
+        }
+    }
+})
+
+var checkbox = document.getElementById("subcriptionCheckbox")
+
+checkbox.addEventListener("click",()=>{
+
     if(checkbox.checked == true){
         checkbox.checked = false;
     }else{
         checkbox.checked = true
     }
-}
+})
+
+var hobbyButton = document.getElementsByClassName("hobbies")[0]
+hobby.addEventListener("click",(e)=>{
+    e.preventDefault()
+    console.log(hobbyButton)
+    if(hobbyButton.style.display=="flex"){
+        hobbyButton.style.display="none"
+    }else{
+        hobbyButton.style.display="flex"
+    }
+})
+
 
 
 
