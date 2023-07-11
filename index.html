@@ -58,7 +58,7 @@
                                 </select>
                                 <br><br>
                         
-                                <label for="profilepic">Profile photo:</label>
+                                <label for="profileimg">Profile photo:</label>
                                 <input id="profileimg" type="file" accept="image/png, image/gif, image/jpeg" name=""  ><br><br>
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                 <div class="box ">
                     <h3 class="title">Present Address</h3>
                      
-                    <div  class="permanentTitle">
+                    <div class="permanentTitle" id="copyDataDiv">
                         <label class="lableCheckbox" for="">If Same As Permanent Address</label>
                         <input type="checkbox" name="" id="copydataCheckbox" ><br><br>
                     </div>
@@ -186,29 +186,28 @@
                 <br>
                         <div>
                             <button id="hobby">Select your hobbies</button>
-                            <div class="hobbies">
-                                <label for="">
+                            <div class="hobbies" id="hobbiesDiv">
+                                <label for="hobby1" id="hob1">
                                     <input type="checkbox" name="" id="hobby1" value="Movies">
                                     Movies
                                 </label>
-                                <label for="">
+                                <label for="hobby2" id="hob2">
                                     <input type="checkbox" name="" id="hobby2" value="Sports">
                                     Sports
                                 </label>
-                                <label for="">
+                                <label for="hobby3" id="hob3">
                                     <input type="checkbox" name="" id="hobby3" value="Video Games">
                                     Video Games
                                 </label>
-                                <label for="">
+                                <label for="hobby4" id="hob4">
                                     <input type="checkbox" name="" id="hobby4" value="Others">
                                     others
                                 </label>
                             </div>
                         </div>
                         <br><br>
-                        <div id="subcriptionCheckBox">
-                            <label for="" >Subcribe To News Letter</label>
-                            
+                        <div>
+                            <label for="subcriptionCheckbox" >Subcribe To News Letter</label>  
                             <input type="checkbox" name="" id="subcriptionCheckbox"><br><br>
                         </div>
     
