@@ -12,6 +12,13 @@ var presentState = document.getElementById("pstate");
 var presentCity = document.getElementById("pcity");
 var presentPostal = document.getElementById("p-postal");
 
+var errormsg = new Array();
+var firstname = document.getElementById("firstnameinp")
+var lastname = document.getElementById("lastnameinp")
+var email = document.getElementById("emailinp")
+var dob = document.getElementById("dobinp")
+var gender = document.getElementById("genderinp")
+
 copyDataDiv.addEventListener("click",async()=>{
     
     var copyCheckbox = document.getElementById("copydataCheckbox");
@@ -284,12 +291,7 @@ cons.addEventListener("change",function (e){
 })
 
 //user info input
-var errormsg = new Array();
-var firstname = document.getElementById("firstnameinp")
-var lastname = document.getElementById("lastnameinp")
-var email = document.getElementById("emailinp")
-var dob = document.getElementById("dobinp")
-var gender = document.getElementById("genderinp")
+
 
 errormsg[0]=document.getElementById("spanFirstName")
 errormsg[0].status=true;
