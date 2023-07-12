@@ -17,7 +17,7 @@ var firstname = document.getElementById("firstnameinp")
 var lastname = document.getElementById("lastnameinp")
 var email = document.getElementById("emailinp")
 var dob = document.getElementById("dobinp")
-var gender = document.getElementById("genderinp")
+var gender = document.getElementById("genderinp") 
 
 copyDataDiv.addEventListener("click",async()=>{
     
@@ -164,7 +164,6 @@ async function pfetchcountry(){
 async function fetchstate(){
 
     permanentState.innerHTML = ""
-    console.log(state)
     let opt = document.createElement("option")   
     opt.selected=true
     opt.disabled=true
@@ -222,7 +221,6 @@ async function pfetchstate(){
 
     let stateselected = document.getElementById("pstate")
     stateselected.addEventListener("change",()=>{
-        console.log("what")
         pfetchcity()
     })
 }
@@ -284,9 +282,7 @@ async function pfetchcity(){
 //user photo
 let cons = document.getElementById("profileimg")
 cons.addEventListener("change",function (e){
-   
     let newsrc = URL.createObjectURL(e.target.files[0])
-    console.log(newsrc)
     photo.setAttribute("src",newsrc);
 })
 
@@ -401,6 +397,9 @@ presentCountry.addEventListener('input',(e)=>{
 })
 
 presentState.addEventListener('input',(e)=>{
+    if(presentCountry.value==""){
+
+    }
     checkforValue(e,13);
 })
 
@@ -471,7 +470,6 @@ submitButton.addEventListener('click',(e)=>{
 var hobbyButton = document.getElementsByClassName("hobbies")[0]
 hobby.addEventListener("click",(e)=>{
     e.preventDefault()
-    console.log(hobbyButton)
     if(hobbyButton.style.display=="flex"){
         hobbyButton.style.display="none"
     }else{
