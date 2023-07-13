@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     var allspantags = document.getElementById("personalInfo").getElementsByTagName("span")
         for(tags of allspantags){
             val=tags.id
-            document.getElementById(tags.id).innerHTML = data[val];
+            document.getElementById(tags.id).innerHTML = data[val]?data[val]:"NA";
         }
 })
