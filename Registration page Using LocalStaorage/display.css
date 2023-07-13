@@ -59,7 +59,9 @@
     border: 1px solid grey;
     width: 97%;
     margin: auto;
-    border-radius: 12px;
+    border-radius: 35px;
+    border: none;
+    background-color: #cfdcdd;
 }
 .box label{
     float: left;margin-right: 10px;
@@ -74,7 +76,9 @@
     border: none;
 }
 .lableCheckbox{
-    color: gray; margin-left: 10px; margin-right: 10px;
+    color: #5e5838;
+    margin-left: 10px;
+    font-weight: 600;
 }
 .permanentTitle{
     display: flex; align-items: center
@@ -111,18 +115,31 @@
 
     #hobby{
         text-decoration: none;
+        border: none;
+        background-color: rgb(228 235 234);
+        border-bottom: 2px solid black;
+        margin-bottom: 5px;
+        cursor: pointer;
     }
     .hobbies{
         flex-direction: column;
         display: none;
-        background-color: rgb(221 221 221);
+        background-color: rgb(228 235 234);
         width: 120px;
+        
     }
-    .hobbies1{
+    .hobbiesVisible{
         flex-direction: column;
         display: flex;
-        background-color: rgb(221 221 221);
+        background-color: rgb(228 235 234);
         width: 120px;
+    }
+    .lastSection{
+        margin-left: 25px;
+    }
+    h3{
+        margin-left: 10px;
+        margin-top: 10px;
     }
     
     @media(max-width:868px) {

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <form >
+        <div class="container" id="userProfile"><br>
+            <div class="heading">
+                <h1>REGISTRATION FORM</h1>
+                <div class="logo">
+                    <img src="/demo.jpg" id="photo" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="box">       
+                    
+                        <h3 class="title">Personal Details</h3><br>
+                        <div class="p-details">
+                            
+                            <div class="col1">
+    
+                                <label for="firstnameinp">First Name:
+                                    <br><span id="spanFirstName">*First name requried </span>
+                                </label>
+                                <input id="firstnameinp" errorId="spanFirstName" data_id="userFirstName" type="text" placeholder="Enter First Name"><br><br>
+            
+                                <label for="lastnameinp">Last Name:
+                                    <br><span id="spanLastName" >*Last name requried </span>
+                                </label>
+                                <input id="lastnameinp" errorId="spanLastName" data_id="userLastName" type="text" placeholder="Enter Last Name"><br><br>
+    
+                                <label for="emailinp">Email:
+                                    <br><span id="spanEmail">*Email requried</span>
+                                </label>
+                                <input id="emailinp" errorId="spanEmail" data_id="userEmail" type="email" placeholder="Enter Email"><br><br>
+                            </div>
+                      
+                            <div class="col1">               
+                           
+                                <label for="dobinp">Dob:
+                                    <br><span id="spanDob">*Dob requried </span>
+                                </label>
+                                <input type="date" errorId="spanDob" data_id="userDob" name="" id="dobinp" ><br><br>
+    
+                                <label for="genderinp">Gender:
+                                    <br><span id="spanGender">*Gender requried </span>
+                                </label>
+                                <select name="" id="genderinp" errorId="spanGender" data_id="userGender">
+                                    <option selected disabled hidden>Tap To Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Rather not say">Rather not say</option>
+                                </select>
+                                <br><br>
+                        
+                                <label for="profileimg">Profile photo:</label>
+                                <input id="profileimg" type="file" accept="image/png, image/gif, image/jpeg" name=""  ><br><br>
+                            </div>
+                        </div>
+                </div>
+            </div><br>
+            <div>
+                <div class="box">
+                    <h3 class="title">Permanent Address</h3><br>
+                    <div class="p-details" id="permanent-details">
+    
+                        <div class="col1">
+    
+                            <label for="AddressLine1">Address Line1:
+                                <br><span id="spanAddress">*Address requried </span>
+                            </label>
+                            <input type="text" id="AddressLine1" placeholder="Address" data_id="userPermanentAddress1" errorId="spanAddress" ><br><br>
+                        
+                            <label for="AddressLine2">Address Line2:</label>
+                            <input type="text" id="AddressLine2" placeholder="Address" data_id="userPermanentAddress2" ><br><br>
+                            
+                            <label for="postal">Postal Code:
+                                <br><span id="spanpostal">*postal-code requried </span>
+                            </label>
+                            <input type="number" errorId="spanpostal" name="" id="postal" data_id="userPermanentPostal" placeholder="postal code"><br><br>
+    
+                        </div>
+    
+                        <div class="col1">
+    
+                            <label for="country">country:
+                                <br><span id="spancountry">*Country requried </span>
+                            </label> 
+                            <select name="" id="country" errorId="spancountry" data_id="userPermanentCountry">
+                                <option selected disabled hidden>Tap To Select Country</option>
+                            </select>
+                            <br><br>
+                    
+                            <label for="state">State:
+                                <br><span id="spanstate">*State requried </span>
+                            </label> 
+                            <select name="" id="state" errorId="spanstate"  data_id="userPermanentState">
+                                <option selected disabled hidden>Tap To Select State</option> 
+                            </select>
+                            <br><br>
+            
+                            <label for="city">City:
+                                <br><span id="spancity">*City requried </span>
+                            </label>
+                            <select name="" id="city" errorId="spancity" data_id="userPermanentCity">
+                                <option selected disabled hidden>Tap To Select City</option>
+                            </select>
+                            <br><br>
+                        </div>
+                        
+                    </div>
+    
+                </div><br>
+            </div>
+    
+            <div>
+    
+                <div class="box ">
+                    <h3 class="title">Present Address</h3>
+                     
+                    <div class="permanentTitle" id="copyDataDiv">
+                        <label class="lableCheckbox" for="copydataCheckbox">If Same As Permanent Address</label>
+                        <input type="checkbox" name="" id="copydataCheckbox" ><br><br>
+                    </div>
+                    <div class="p-details" id="present-details">
+    
+                        <div class="col1">
+    
+                            <label for="presentAddressLine1">Address Line1:
+                                <br><span id="spanpadl1">*Address requried </span>
+                            </label>
+                            <input type="text" id="presentAddressLine1" errorId="spanpadl1" placeholder="Address" data_id="userPresentAddress1"><br><br>
+                        
+                            
+                            <label for="presentAddressLine2">Address Line2:</label>
+                            <input type="text"  data_id="userPresentAddress2" id="presentAddressLine2" placeholder="Address"><br><br>
+    
+                            
+                            <label for="present-postal">Postal Code:
+                                <br><span id="spanp-postal">*postal-code requried </span>
+                            </label>
+                            <input type="text" errorId="spanp-postal" data_id="userPresentPostal" name="" id="present-postal" placeholder="postal code"><br><br>
+                    
+                        </div>
+    
+                        <div class="col1">
+    
+                            <label for="presentCountry">country:
+                                <br><span id="spanp-country">*Country requried </span>
+                            </label> 
+                            <select name="" id="presentCountry" errorId="spanp-country" data_id="userPresentCountry">
+                                <option selected disabled hidden>Tap To Select Country </option>        
+                            </select>
+                            <br><br>
+                    
+                            <label for="presentState">State:
+                                <br><span id="spanp-state">*State requried </span>
+                            </label> 
+                            <select name="" id="presentState" errorId="spanp-state" data_id="userPresentState">
+                                <option selected disabled hidden>Tap To Select State</option>
+                            </select>
+                            <br><br>
+            
+                            <label for="presentCity">City:
+                                <br><span id="spanp-city">*City requried </span>
+                            </label>
+                            <select name="" id="presentCity" errorId="spanp-city" data_id="userPresentCity">
+                                <option selected disabled hidden>Tap To Select City</option>
+                            </select>
+                            <br><br>
+                        </div>
+                    
+                    </div>
+                    
+                </div><br>
+                
+            </div>
+    
+            <div class="lastSection" >
+                <br>
+                        <div>
+                            <button id="hobby">Select your hobbies</button>
+                            <div class="hobbies" id="hobbiesDiv">
+                                <label for="hobby1" id="hob1">
+                                    <input type="checkbox" attrHobby="dummy" name="" id="hobby1" value="Movies">
+                                    Movies
+                                </label>
+                                <label for="hobby2" id="hob2">
+                                    <input type="checkbox" attrHobby="dummy" name="" id="hobby2" value="Sports">
+                                    Sports
+                                </label>
+                                <label for="hobby3" id="hob3">
+                                    <input type="checkbox" attrHobby="dummy" name="" id="hobby3" value="Video Games">
+                                    Video Games
+                                </label>
+                                <label for="hobby4" id="hob4">
+                                    <input type="checkbox" attrHobby="dummy" name="" id="hobby4" value="Others">
+                                    others
+                                </label>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div>
+                            <label for="subcriptionCheckbox" >Subcribe To News Letter</label>  
+                            <input type="checkbox" attrChk="userSubcription" name="" id="subcriptionCheckbox"><br><br>
+                        </div>
+    
+                        <button class="submit" id="submitButton">Submit</button><br><br>
+            </div>
+    
+        </div>
+    </form>
+    <div class="userContainer">
+        <br><h1>User Details</h1><br>
+        <div class="box noborder ">
+            <h3 >Personal Details</h3><br>
+            <div class="userData">
+                <div class="col1">
+                    <label for="userFirstName">First Name:</label>
+                    <span id="userFirstName"></span><br><br>
+                    <label for="userLastName">Last Name:</label>
+                    <span id="userLastName"></span><br><br>
+                    <label for="userEmail">Email:</label>
+                    <span id="userEmail"></span><br><br>
+                </div>
+                <div class="col1">
+                    <label for="userDob">Dob:</label>
+                    <span id="userDob"></span><br><br>
+                    <label for="userGender">Gen:</label>
+                    <span id="userGender"></span><br><br>
+                </div>
+            </div>
+        </div><br>
+        <div class="box noborder ">
+            <h3 >Permanent Address</h3><br>
+            <div class="userData">
+                <div class="col1">
+                    <label for="userPermanentAddress1">Address Line1:</label>
+                    <span id="userPermanentAddress1"></span><br><br>
+
+                    <label for="userPermanentAddress2">Address Line2:</label>
+                    <span id="userPermanentAddress2"></span><br><br>
+
+                    <label for="userPermanentPostal">Postal Code:</label>
+                    <span id="userPermanentPostal"></span><br><br>
+                </div>
+                <div class="col1">
+                    <label for="userPermanentCountry">Country:</label>
+                    <span id="userPermanentCountry"></span><br><br>
+
+                    <label for="userPermanentState">State:</label>
+                    <span id="userPermanentState"></span><br><br>
+
+                    <label for="userPermanentCity">City:</label>
+                    <span id="userPermanentCity"></span><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="box noborder ">
+            <h3 >Present Address</h3><br>
+            <div class="userData">
+                <div class="col1">
+                    <label for="userPresentAddress1">Address Line1:</label>
+                    <span id="userPresentAddress1"></span><br><br>
+
+                    <label for="userPresentAddress2">Address Line2:</label>
+                    <span id="userPresentAddress2"></span><br><br>
+
+                    <label for="userPresentPostal">Postal Code:</label>
+                    <span id="userPresentPostal"></span><br><br>
+                </div>
+                <div class="col1">
+                    <label for="userPresentCountry">Country:</label>
+                    <span id="userPresentCountry"></span><br><br>
+
+                    <label for="userPresentState">State:</label>
+                    <span id="userPresentState"></span><br><br>
+
+                    <label for="userPresentCity">City:</label>
+                    <span id="userPresentCity"></span><br><br>
+                </div>
+            </div>
+        </div><br>
+        <div class="box noborder ">
+                    <label for="userHobbies">Hobbies:</label>
+                    <span id="userHobbies"></span><br><br>
+                    <label for="userSubcription">NewsLetter Subcription:</label>
+                    <span id="userSubcription"></span><br>
+                    <br>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="index.js"></script>
+</html>
