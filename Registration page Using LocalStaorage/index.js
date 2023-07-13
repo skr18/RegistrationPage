@@ -161,8 +161,10 @@ $(document).ready(async function () {
 
   $("#submitButton").click(function (e) {
     e.preventDefault();
-    let val = checkforError("userProfile");
+    let flag = checkforError("userProfile");
     // email
+    if(flag){
+
       $("#userHobbies").text("");
       let objectData ={}
       $("#userProfile input").each(function () {
@@ -190,6 +192,7 @@ $(document).ready(async function () {
       });
       objectData["userHobbies"]= $("#userHobbies").html()
       uploadData(objectData)
+    }
   });
 });
 
