@@ -477,9 +477,6 @@
 //     }
 // })
 function uploadData(objectData){
-
-    console.log(objectData)
     document.cookie=`data=${JSON.stringify(objectData)}`
-    localStorage.setItem("localdata",`${JSON.stringify(objectData)}`)
-    location.href="/DisplayPage.html"
+    
 }
