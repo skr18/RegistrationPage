@@ -18,13 +18,13 @@ $(document).ready(async function () {
     $("#country").change(function () {
       $(`#${$(`#state`).attr("errorId")}`)
         .text("State requried")
-        .css("visibility", "hidden");
+        .css("visibility", "visible");
       fetchdata("state", "states", country.value, "state_name");
     });
     $("#state").change(function () {
       $(`#${$(`#city`).attr("errorId")}`)
         .text("city requried")
-        .css("visibility", "hidden");
+        .css("visibility", "visible");
       fetchdata("city", "cities", state.value, "city_name");
     });
 
@@ -32,13 +32,13 @@ $(document).ready(async function () {
     $("#presentCountry").change(function () {
       $(`#${$(`#presentState`).attr("errorId")}`)
         .text("State requried")
-        .css("visibility", "hidden");
+        .css("visibility", "visible");
       fetchdata("presentState", "states", presentCountry.value, "state_name");
     });
     $("#presentState").change(function () {
       $(`#${$(`#presentCity`).attr("errorId")}`)
         .text("city requried")
-        .css("visibility", "hidden");
+        .css("visibility", "visible");
       fetchdata("presentCity", "cities", presentState.value, "city_name");
     });
   }
@@ -56,6 +56,7 @@ $(document).ready(async function () {
   $("#city").click(function () {
     checkforEmpty("city", "state");
   });
+
   function checkforEmpty(child, parent) {
     if ($(`#${parent}`).val() == null) {
       $(`#${$(`#${child}`).attr("errorId")}`)
@@ -71,13 +72,13 @@ $(document).ready(async function () {
     let val = checkforEmptyData($(this), $(this).val() == null);
   });
 
-  async function fetchdata(id, url, country, name) {
-    $(`#${id}`).text("");
+  async function fetchdata(child, url, parent, name) {
+    $(`#${child}`).text("");
     $("<option/>", { selected: true, disabled: true, hidden: true })
       .text(`Tap To Select ${url}`)
-      .appendTo(`#${id}`);
+      .appendTo(`#${child}`);
     const responce = await fetch(
-      `https://www.universal-tutorial.com/api/${url}/${country}`,
+      `https://www.universal-tutorial.com/api/${url}/${parent}`,
       {
         headers: {
           Authorization: `Bearer ${authtoken.auth_token}`,
@@ -87,8 +88,12 @@ $(document).ready(async function () {
     );
 
     let datas = await responce.json();
-    for (let data of datas) {
-      $("<option/>", { value: data[name] }).text(data[name]).appendTo(`#${id}`);
+    if(datas.length==0){
+      $("<option/>", { value: parent }).text(parent).appendTo(`#${child}`);
+    }else{
+      for (let data of datas) {
+        $("<option/>", { value: data[name] }).text(data[name]).appendTo(`#${child}`);
+      }
     }
   }
 
@@ -106,14 +111,19 @@ $(document).ready(async function () {
         await fetchdata("presentCity", "cities", state.value, "city_name");
         $("#presentCity").val($("#city").val());
         checkforError("present-details");
+      }else{
+        $("#copydataCheckbox")[0].checked=false
       }
-    } else {
+    } 
+    else {
       $("#presentAddressLine1").val("");
       $("#presentAddressLine2").val("");
       $("#present-postal").val("");
       fetchdata("presentCountry", "countries", "", "country_name");
       fetchdata("presentState", "states", country.value, "state_name");
       fetchdata("presentCity", "cities", state.value, "city_name");
+      console.log($("#copydataCheckbox")[0].checked)
+      
     }
   });
   function checkforError(id) {
@@ -144,7 +154,7 @@ $(document).ready(async function () {
       $(`#${$(id).attr("errorId")}`).css("visibility", "visible");
       return 0;
     } else {
-      $(`#${$(id).attr("errorId")}`).css("visibility", "hidden");
+      $(`#${$(id).attr("errorId")}`).css({"visibility":"hidden"});
       return 1;
     }
   }
@@ -164,7 +174,6 @@ $(document).ready(async function () {
     let flag = checkforError("userProfile");
     // email
     if(flag){
-
       $("#userHobbies").text("");
       let objectData ={}
       $("#userProfile input").each(function () {
@@ -195,9 +204,3 @@ $(document).ready(async function () {
     }
   });
 });
-
-
-$("#signupId").click(function(e){
-  e.preventDefault()
-  $("#loginId a").css("background-color","green")
-})
